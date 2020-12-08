@@ -1,7 +1,7 @@
 {
   "name": "polyinterface",
-  "version": "1.2.3",
-  "description": "Polyglot-v2 interface for node.js",
+  "version": "3.0.0",
+  "description": "Polyglot-v3 interface for node.js",
   "main": "index.js",
   "scripts": {
     "linter": "eslint --ignore-path .gitignore .",
@@ -12,7 +12,7 @@
   ],
   "author": "Benoit Mercier",
   "license": "MIT",
-  "repository": "github:UniversalDevicesInc/polyglot-v2-nodejs-interface",
+  "repository": "github:UniversalDevicesInc/polyglot-v3-nodejs-interface",
   "dependencies": {
     "mqtt": "^2.18.8",
     "winston": "^3.1.0",
