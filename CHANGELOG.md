@@ -1,5 +1,8 @@
 # Change Log
 
+v3.0.0 (2020-12009)
+* Update to work with Polyglot version 3
+
 v1.2.3 (2019-04-23)
 * Add support for hints.
 
