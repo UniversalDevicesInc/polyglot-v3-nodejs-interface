@@ -1,8 +1,8 @@
-# UDI Polyglot v2 Interface Module (Node.js)
+# UDI Polyglot v3 Interface Module (Node.js)
 
-This is the Polyglot interface API module that is used to develop a node.js based NodeServer for Polyglot v2.
+This is the Polyglot interface API module that is used to develop a node.js based NodeServer for Polyglot v3.
 
-This has been tested with Polyglot-v2 version 2.2.1.
+This has been tested with Polyglot-v3 version 3.0.0.
 
 ## Installation
 
@@ -32,11 +32,11 @@ The polyglot interface module has 2 main javascript classes you need to use to i
 ### The Node class
 The Node class represents a generic ISY node. Your custom nodes will have to inherit from this class, and they should
 match the status and the controls that you have created in your nodedefs. Given that your Nodeserver may be used for
-Polyglot V2 or Polyglot cloud, the class has to be dynamically created to that your class extends the correct Node class
-(Polyglot V2 or PGC).
+Polyglot V3 or Polyglot cloud, the class has to be dynamically created to that your class extends the correct Node class
+(Polyglot V3 or PGC).
 
 The recommended approach is to create one node.js module per Nodedefs, with a single function that returns the class. 
-The class returned inherits from Polyglot.Node, Polyglot being the Polyglot module passed from your Nodeserver (Polyglot V2 or PGC).
+The class returned inherits from Polyglot.Node, Polyglot being the Polyglot module passed from your Nodeserver (Polyglot V3 or PGC).
 
 ```javascript
 const nodeDefId = 'VNODE_DIMMER';
@@ -154,7 +154,7 @@ to interact with the NodeServer from the admin console or an ISY program.
 Please see the template for a complete example of a custom node and a controller node.
 
 ### The Interface class
-The Interface class is a singleton used to interact with Polyglot-v2 through MQTT.
+The Interface class is a singleton used to interact with Polyglot-v3 through MQTT.
 
 You first need to instantiate the interface by passing an array of node definitions that you have created.
 Once instantiated, you can use events triggered by the interface such as `config`, `poll` or `stop`.
@@ -164,7 +164,7 @@ Once instantiated, you can use events triggered by the interface such as `config
 // Loads the appropriate Polyglot interface module.
 const Polyglot = useCloud() ?
   require('pgc_interface') : // Cloud module
-  require('polyinterface'); // Polyglot V2 module (On-Premise)
+  require('polyinterface'); // Polyglot V3 module (On-Premise)
 
 // Note that we are passing the Polyglot module so that we can get the class inherited from the correct module.
 const ControllerNode = require('./Nodes/ControllerNode.js')(Polyglot); // Controller node
@@ -391,7 +391,7 @@ tail -f ~/.polyglot/nodeservers/<NodeServer>/logs/debug.log
 
 Your nodeserver needs to use the [pgc_interface node.js module](https://github.com/UniversalDevicesInc/pgc-nodejs-interface).
 
-If your Nodeserver supports both Polyglot V2 and Cloud, then your Nodeserver 
+If your Nodeserver supports both Polyglot V3 and Cloud, then your Nodeserver 
 must dynamically select which interface module to use. See the 
 [node.js NodeServer template](https://github.com/UniversalDevicesInc/poly-template-nodejs) for an example.
 Although they are completely separate module, the way they are used 
