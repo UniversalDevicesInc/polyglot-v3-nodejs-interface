@@ -1,6 +1,6 @@
 {
-  "name": "polyinterface",
-  "version": "3.0.0",
+  "name": "polyinterface-v3",
+  "version": "3.0.1",
   "description": "Polyglot-v3 interface for node.js",
   "main": "index.js",
   "scripts": {
@@ -10,7 +10,7 @@
   "keywords": [
     "polyglot"
   ],
-  "author": "Benoit Mercier",
+  "author": ["Benoit Mercier","Bob Paauwe"],
   "license": "MIT",
   "repository": "github:UniversalDevicesInc/polyglot-v3-nodejs-interface",
   "dependencies": {

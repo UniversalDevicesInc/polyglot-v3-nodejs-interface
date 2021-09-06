@@ -1,6 +1,9 @@
 # Change Log
 
-v3.0.0 (2020-12009)
+v3.0.1 (2021-09-06)
+* More changes to work with Polyglot version 3
+
+v3.0.0 (2020-12-09)
 * Update to work with Polyglot version 3
 
 v1.2.3 (2019-04-23)
