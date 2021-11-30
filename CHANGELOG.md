@@ -1,5 +1,8 @@
 # Change Log
 
+v3.0.2 (2021-11-30)
+* Added reportCmd() method to the node class.
+
 v3.0.1 (2021-09-06)
 * More changes to work with Polyglot version 3
 
