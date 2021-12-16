@@ -211,6 +211,8 @@ poly.start();
 is passed in parameter. You can check for config.isInitialConfig to know if the is the first config received. Use this
 for initialization when you want to have a working config loaded.
 
+NEW for PG3, the config object no longer has the custom values (parameters, data, typed).  These now have separate events that return the individual custom data objects. See below.
+
 The config object will have a property newParamsDetected set to true if the customParams changed.
 
 `poll` is triggered frequently, based on your short poll and long poll values. The longPoll parameter is a flag telling
@@ -219,6 +221,24 @@ you if this is a long poll or short poll.
 `stop` is triggered whenever the node server is being stopped.
 
 `delete` is triggered whenever the user is deleting the NodeServer.
+
+`discover` is triggered whenever the user clicks the "Discover" button in the UI.
+
+`customParams` is triggered whenever there is a change to the custom parameters.The event includes the current parameters.
+
+`customData` is triggered whenever there is a change to the custom data. The event includes the current data.
+
+`customTypedParams` is triggered whenever there is a change to the 'typed' parameters.
+
+`customTypedData` is triggered whenever there is a change to the 'typed' parameter data.
+
+`nsData` is triggered whenever there is new node server data. 
+
+`notices' is triggered whenever there is a change in notices.
+
+`getIsyInfo` is triggered when new ISY information is sent (ip, username, password).
+
+`getNsInfo` is triggered when there is a change in a node server.
 
 
 The following events are less commonly used but could be useful for troubleshooting:

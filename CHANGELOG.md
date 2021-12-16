@@ -1,5 +1,10 @@
 # Change Log
 
+v3.0.3 (2021-12-16)
+* Add new events supported by PG3
+* Split custom objects from config object.
+* Fix node fields (some are slightly different for PG3)
+
 v3.0.2 (2021-11-30)
 * Added reportCmd() method to the node class.
 
