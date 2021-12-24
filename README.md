@@ -236,6 +236,8 @@ you if this is a long poll or short poll.
 
 `notices' is triggered whenever there is a change in notices.
 
+`customParamsDoc` is triggered whenever there is change to the config documentation.
+
 `getIsyInfo` is triggered when new ISY information is sent (ip, username, password).
 
 `getNsInfo` is triggered when there is a change in a node server.
