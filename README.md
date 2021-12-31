@@ -305,6 +305,8 @@ removeCustomParams(key), Removed the custom param specified by the key.
 
 saveTypedParams(typedParams), This method is not yet available in the cloud.
 
+getTypeData(), This method returns the most recent "Typed" configuration parameter data.
+
 Here's an example
 ```javascript
 // Custom parameters definitions in front end UI configuration screen
