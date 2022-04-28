@@ -1,6 +1,6 @@
 {
   "name": "polyinterface-v3",
-  "version": "3.0.12",
+  "version": "3.0.13",
   "description": "Polyglot-v3 interface for node.js",
   "main": "index.js",
   "scripts": {
@@ -12,7 +12,8 @@
   ],
   "author": [
     "Benoit Mercier",
-    "Bob Paauwe"
+    "Bob Paauwe",
+    "John Eubanks"
   ],
   "license": "MIT",
   "repository": "github:UniversalDevicesInc/polyglot-v3-nodejs-interface",
@@ -20,7 +21,9 @@
     "mqtt": "^2.18.8",
     "npmrc": "^1.1.1",
     "winston": "^3.1.0",
-    "winston-daily-rotate-file": "^3.6.0"
+    "winston-daily-rotate-file": "^3.6.0",
+    "axios": "^0.21.4",
+    "xml2js": "^0.4.23"
   },
   "devDependencies": {
     "eslint": "^5.12.0",
