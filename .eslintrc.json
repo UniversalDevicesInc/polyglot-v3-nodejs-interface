@@ -1,14 +1,15 @@
 {
   "extends": "strongloop",
   "parserOptions": {
-    "ecmaVersion": 2017
+    "ecmaVersion": "latest",
+    "sourceType": "module"
   },
   "env": {
-    "es6": true
+    "node": true
   },
   "rules": {
     "indent": [
-      "error",
+      "warn",
       2, {
         "MemberExpression": 0,
         "SwitchCase": 1,

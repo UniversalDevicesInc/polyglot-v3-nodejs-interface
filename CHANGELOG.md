@@ -1,5 +1,21 @@
 # Change Log
 
+v3.4.0 (2025-12-23)
+* Added parity with Python interface (udi_python_interface)
+* Added OAuth class for OAuth2 authentication support
+* Added webhook support with webhookResponse() method
+* Added bonjour/mDNS support with bonjour() method
+* Added node management methods: renameNode(), getNodesFromDb(), getNodeNameFromDb()
+* Added validation methods: getValidName(), getValidAddress()
+* Added nodes() generator/iterator method
+* Added profile management: getJsonProfile(), updateJsonProfile()
+* Added setPoll() method to control short/long poll intervals
+* Added setController() method to set connection status node
+* Added udm_alert() method for UD Mobile notifications
+* Added Node.rename() method
+* Added support for webhook, bonjour, profile, updateProfileDone, and delNodeDone events
+* Added lib/ and types/ to .gitignore
+
 v3.0.7 (2021-12-24)
 * Add nodes to internal node list when first created.
 v3.0.6 (2021-12-24)

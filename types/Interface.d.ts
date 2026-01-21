@@ -1,0 +1,117 @@
+import events from 'events';
+import { MqttClient } from 'mqtt';
+import { Node } from './Node.js';
+import { ISY } from './isy.js';
+interface Config {
+    hasOwnProperty: any;
+    logLevel: any;
+    nodes: any;
+    customparams: {
+        [x: string]: any;
+    };
+    newParamsDetected: boolean;
+}
+export declare class Interface extends events.EventEmitter {
+    isCloud: boolean;
+    _mqttHost: any;
+    _mqttPort: any;
+    _mqttTopic: any;
+    _mqttTopicPolyglotConnection: null;
+    _profileNum: null;
+    _mqttClient: MqttClient;
+    _mqttClientConnected: boolean;
+    _mqttPolyglotConnected: boolean;
+    _config: Partial<Config>;
+    _queue: any;
+    _messageAsyncTracking: {};
+    _shuttingDown: boolean;
+    _nodeClasses: typeof Node[];
+    _nodes: {};
+    _configCounter: number;
+    _noticesFormatObject: boolean;
+    _keyedNotices: {};
+    _customParams: {};
+    _customData: {};
+    _customTypedParams: {};
+    _customTypedData: {};
+    _isyInfo: null;
+    _uuid: any;
+    _token: any;
+    id: string;
+    _customdata: any;
+    _nodesFromDb: any;
+    constructor(declaredNodeClasses: typeof Node[]);
+    start(): Promise<void>;
+    stop(): void;
+    ready(): Promise<void>;
+    _getEnvConfig(): Promise<unknown>;
+    _mqttStart(): void;
+    _onMessage(message: any): void;
+    _onMessageQueued(opt: {
+        messageKey: any;
+        messageContent: any;
+    }): Promise<any>;
+    _setParamsDetected(oldConfig: Partial<Config>, newConfig: Partial<Config> & {
+        newParamsDetected: boolean;
+    }): void;
+    _addNodeToList(node: {
+        address: string | number;
+        nodeDefId: string | number;
+        primaryNode: any;
+        name: any;
+        nodedef: any;
+    }): Node;
+    _onConfig(config: Partial<Config>): void;
+    _detectConfigLoop(): boolean;
+    _onResult(messageKey: any, messageContent: any): void;
+    _getController(): any;
+    _sendMessage(message: any, type: any, retain?: boolean): void;
+    isConnected(): boolean;
+    sendMessage(message: any, type: any): void;
+    sendMessageAsync(key: any, message: any, type: any, timeout?: number): Promise<any>;
+    addNode(node: any): Promise<any>;
+    getConfig(): Partial<Config>;
+    getNodes(): {};
+    getNode(address: any): any;
+    delNode(node: any): void;
+    updateProfile(): void;
+    getNotices(): {};
+    noticeExists(key: any): any;
+    addNotice(key: any, text: any): void;
+    addNoticeTemp(key: any, text: any, delaySec: any): void;
+    removeNotice(key: any): void;
+    removeNoticesAll(): void;
+    getCustomParam(key: any): any;
+    getCustomParams(): {};
+    saveCustomParams(params: any): void;
+    addCustomParams(params: any): void;
+    removeCustomParams(key: any): void;
+    saveTypedParams(typedParams: any): void;
+    getTypedData(): {};
+    getCustomData(key?: any): any;
+    saveCustomData(data: any): void;
+    addCustomData(data: any): void;
+    removeCustomData(key: any): void;
+    setCustomParamsDoc(html: any): void;
+    restart(): void;
+    setLogLevel(level: any): void;
+    ISY(): ISY;
+    getNodesFromDb(address?: string | string[] | null): any;
+    getNodeNameFromDb(address: string): any;
+    getValidName(name: string): string;
+    getValidAddress(address: string): string;
+    renameNode(address: string, newName: string): void;
+    nodes(): Generator<unknown, void, unknown>;
+    setPoll(shortPoll?: number | null, longPoll?: number | null): void;
+    setController(address: string, driver: string): void;
+    udm_alert(title: string, body: string): void;
+    webhookResponse(response: any, status?: number): void;
+    bonjour(type: string, protocol?: string, subtypes?: string[]): void;
+    getJsonProfile(options?: {
+        waitResponse?: boolean;
+    }): Promise<unknown>;
+    updateJsonProfile(profile: any, options?: {
+        waitResponse?: boolean;
+    }): Promise<unknown>;
+}
+export {};

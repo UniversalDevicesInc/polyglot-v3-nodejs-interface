@@ -1,11 +1,17 @@
 {
-  "name": "polyinterface-v3",
-  "version": "3.0.20",
-  "description": "Polyglot-v3 interface for node.js",
-  "main": "index.js",
+  "name": "udi-interface",
+  "version": "3.4.0",
+  "description": "Polyglot-v3x interface for node.js",
+  "main": "lib/index.js",
+  "module": "lib/index.js",
+  "sourceType": "module",
+  "type": "module",
+  "types": "types/index.d.ts",
   "scripts": {
     "linter": "eslint --ignore-path .gitignore .",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "rimraf ./lib/* && rimraf ./types/* && tsc -p ./tsconfig.json --declaration",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "npm run build"
   },
   "keywords": [
     "polyglot"
@@ -16,17 +22,21 @@
     "John Eubanks"
   ],
   "license": "MIT",
-  "repository": "github:UniversalDevicesInc/polyglot-v3-nodejs-interface",
+  "repository": "github:UniversalDevicesInc/udi-nodejs-interface",
   "dependencies": {
+    "axios": "^0.21.4",
     "mqtt": "^2.18.8",
     "npmrc": "^1.1.1",
     "winston": "^3.1.0",
     "winston-daily-rotate-file": "^3.6.0",
-    "axios": "^0.21.4",
     "xml2js": "^0.4.23"
   },
   "devDependencies": {
+    "@types/node": "",
+    "@types/xml2js": "^0.4.14",
     "eslint": "^5.12.0",
-    "eslint-config-strongloop": "^2.1.0"
+    "eslint-config-strongloop": "^2.1.0",
+    "rimraf": "^5.0.5",
+    "typescript": "^5.5.2"
   }
 }

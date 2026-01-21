@@ -147,6 +147,8 @@ this.status(), which is called when we get a status request for this node.
 
 this.delNode(), which will remove the node from Polyglot and the ISY.
 
+this.rename(newName), which will rename the node to newName.
+
 ##### The controller node
 
 Normally, your NodeServer should have a controller node, in addition to your custom nodes. The controller node is
@@ -241,6 +243,16 @@ you if this is a long poll or short poll.
 `getIsyInfo` is triggered when new ISY information is sent (ip, username, password).
 
 `getNsInfo` is triggered when there is a change in a node server.
+
+`webhook` is triggered when a webhook request is received from an external service. See Webhooks.md for details.
+
+`bonjour` is triggered with results from a bonjour/mDNS query.
+
+`profile` is triggered when profile data is received after calling getJsonProfile().
+
+`updateProfileDone` is triggered when updateJsonProfile() has completed.
+
+`delNodeDone` is triggered when a node has been successfully deleted.
 
 
 The following events are less commonly used but could be useful for troubleshooting:
@@ -360,6 +372,64 @@ getCustomData(key = null), gives you all of your custom data, or a specific key 
 removeCustomData(key), allows you to delete custom data.
 
 restart(), allows you to self restart the NodeServer.
+
+
+##### New Methods for Parity with Python Interface
+
+**Node Management:**
+
+getNodesFromDb(address), Returns node information from the PG3 database. If address is null, returns all nodes. Can also accept an array of addresses.
+
+getNodeNameFromDb(address), Returns the name of a node from the database.
+
+renameNode(address, newName), Renames a node.
+
+getValidName(name), Returns a cleaned node name with illegal characters removed.
+
+getValidAddress(address), Returns a cleaned node address with illegal characters removed and truncated to 14 characters.
+
+nodes(), Generator/iterator function to iterate over all nodes. Example: `for (const node of poly.nodes()) { ... }`
+
+**Profile Management:**
+
+getJsonProfile(options), Gets the profile in JSON format from PG3. Set options.waitResponse to true to wait for and return the profile.
+
+updateJsonProfile(profile, options), Updates the profile with nodedefs/editors/linkdefs. Set options.waitResponse to true to wait for completion.
+
+**Polling:**
+
+setPoll(shortPoll, longPoll), Sets the short and/or long poll intervals in seconds.
+
+**Connection Status:**
+
+setController(address, driver), Tells PG3 which node and driver to update with connection status.
+
+**Mobile Notifications:**
+
+udm_alert(title, body), Sends a push notification to UD Mobile.
+
+**Webhooks:**
+
+webhookResponse(response, status), Sends a response to a webhook request. See Webhooks.md for details.
+
+**Bonjour/mDNS:**
+
+bonjour(type, protocol, subtypes), Sends a bonjour/mDNS query on the local network.
+
+**OAuth Support:**
+
+The OAuth class is now available for OAuth2 authentication. See OAuth2.md for detailed usage.
+
+```javascript
+import Polyglot from 'udi-interface';
+
+class MyService extends Polyglot.OAuth {
+  constructor(polyInterface) {
+    super(polyInterface);
+  }
+  // ... implement customNsHandler, oauthHandler, and your API methods
+}
+```
 
 
 ### Creating nodes
