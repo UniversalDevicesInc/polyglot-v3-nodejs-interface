@@ -2,15 +2,20 @@
 
 v3.1.0 (2026-08-26)
 * Add support for eisy-ui
+
 v3.0.7 (2021-12-24)
 * Add nodes to internal node list when first created.
+
 v3.0.6 (2021-12-24)
-* Format driver status messages correctly
-v3.0.5 (2021-12-22)
+* Format driver status messages correctly 
+
+* v3.0.5 (2021-12-22)
 * add event for customparamsdoc
 * make some error/info messages debug messages
+
 v3.0.4 (2021-12-16)
 * Handle addNode better
+
 v3.0.3 (2021-12-16)
 * Add new events supported by PG3
 * Split custom objects from config object.
