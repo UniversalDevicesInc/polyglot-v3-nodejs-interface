@@ -1,5 +1,8 @@
 # Change Log
 
+v3.1.1 (2026-08-26)
+* Set the mqtt will
+
 v3.1.0 (2026-08-26)
 * Add support for eisy-ui
 
