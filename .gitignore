@@ -2,4 +2,3 @@
 node_modules/
 npm*.log
 .idea/
-package-lock.json
