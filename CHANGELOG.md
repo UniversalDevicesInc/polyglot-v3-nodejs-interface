@@ -1,5 +1,7 @@
 # Change Log
 
+v3.1.0 (2026-08-26)
+* Add support for eisy-ui
 v3.0.7 (2021-12-24)
 * Add nodes to internal node list when first created.
 v3.0.6 (2021-12-24)
