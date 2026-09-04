@@ -1,5 +1,8 @@
 # Change Log
 
+v3.1.2 (2026-09-04)
+* Fixed the MQTT clientId (Regression bug from 3.1.0)
+
 v3.1.1 (2026-08-26)
 * Set the mqtt will
 
